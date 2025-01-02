@@ -1,0 +1,59 @@
+.image-container {
+  overflow: hidden;  /* Ensures that the image stays within the container when scaled */
+  margin: 70px;
+  position: relative;
+  aspect-ratio: 16 / 9; 
+  border: none;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s ease; /* Add the scaling transition to the image */
+}
+
+.image-container:hover img {
+  transform: scale(1.1); /* Only scale the image, not the container */
+}
+
+/* Gradient overlay */
+.image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); 
+  z-index: 0; 
+}
+
+/* Overlay text styling */
+.overlay-text {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  font-weight: bolder;
+  letter-spacing: 10px;
+  text-align: center; 
+  white-space: nowrap; 
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+  z-index: 1; 
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .image-container {
+    margin: 35px;
+    aspect-ratio: 16 / 9; 
+  }
+
+  .overlay-text {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+}

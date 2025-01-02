@@ -1,0 +1,200 @@
+
+
+#landing-page {
+  min-height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)95%),
+    url("../../images/HERO\ -7.jpg") no-repeat center top;
+  background-size: 100%;
+  position: relative;
+  z-index: 1;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(255, 255, 255, 0)
+  ); 
+  border: none;
+}
+
+
+.navbar img {
+  animation-name: logo;
+  animation-duration: 2s;
+  height: auto;
+  width: 20%;
+  
+}
+
+
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+  padding: 5px 0px;
+  
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {  
+  margin: 0px 10px;
+  padding: 0px 30px;
+  transition: transform 0.4s ease-in-out; 
+}
+
+.navigation ul li:hover {
+  transform: scale(1.2); 
+}
+
+.navigation ul li a {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  transition: color 0.4s ease-in-out; 
+}
+
+.navigation ul li a:hover {
+  color: lightgray; 
+}
+
+
+
+@keyframes logo {
+  from {
+    opacity: 0;
+    translate: 100px;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.hamburger {
+  display: none; 
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover .bar {
+  background-color: lightgray;
+}
+
+/* -------------------------------------------------------------------------------------para */
+
+.para {  
+  margin: 38% 0 0 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 30px;
+  animation-name: para;
+  animation-duration: 2.5s;
+  position: sticky;
+}
+@keyframes para {
+  from {
+    translate: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* -------------------------------------------mobile------------------------------------------------------------ */
+@media (max-width: 860px) {
+  #landing-page {
+    min-height: 10%;
+    padding-bottom: 50px;    
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar img {
+    padding: 1rem;
+    width: 50%;
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #333; 
+    width: 100%;
+    height: auto;
+    text-align: center;
+    z-index: 2;
+  }
+  .navigation.active {
+    display: block; 
+  }
+  .navigation ul {
+    flex-direction: column; 
+    padding: 0;
+    margin: 0;
+  }
+  .navigation ul li {
+    padding: 15px;
+  }
+  .navigation ul li a {
+    font-size: 18px;
+  }
+ 
+  .hamburger {    
+    display: block;
+    position: absolute;    
+    right: 20px;
+  }
+  .para {
+    margin: 25% 0 0 0;
+    padding: 0px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 20px;
+    animation-name: para;
+    animation-duration: 2.5s;
+    font-size: 16px;
+    position:relative;
+    
+  }
+  @keyframes para {
+    from {
+      translate: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
